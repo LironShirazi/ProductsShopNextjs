@@ -10,9 +10,6 @@ export default function Product({ title, image, price, category, description }) 
   // const { id } = router.query;
   return (
     <div className={styles.productPageContainer}>
-      <button type="button">
-        <Link href="/products">Back to Products Page</Link>
-      </button>
       <div className={styles.productContainer}>
         <h1 className={styles.productTitle}>{title}</h1>
         <div className={styles.imageContainer}>
@@ -24,6 +21,10 @@ export default function Product({ title, image, price, category, description }) 
           {price}
           <span className={styles.currency}>$</span>
         </div>
+        <button type="button" className={styles.button}>
+        <Link href="/products">Back to Products Page</Link>
+      </button>
+
       </div>
     </div>
   );
