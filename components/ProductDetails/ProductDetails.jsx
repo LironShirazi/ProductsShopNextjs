@@ -20,7 +20,7 @@ export default function ProductDetails({
         <span className={styles.currency}>$</span>
       </div>
       <button type="button" className={styles.button}>
-        <Link href="/products">Back to Products Page</Link>
+        <Link className={styles.link} href="/products">Back to Products Page</Link>
       </button>
 
     </div>

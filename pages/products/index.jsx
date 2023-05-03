@@ -23,12 +23,21 @@ export default function Products({ products }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://fakestoreapi.com/products');
-  const products = await res.json();
-
+  try {
+    const res = await fetch('https://fakestoreapi.com/products');
+    const products = await res.json();
+    return {
+      props: {
+        products: products || [],
+      },
+      revalidate: 60,
+    };
+  } catch (err) {
+    console.error('En error ocurred at http get in server side - getStaticProps');
+  }
   return {
     props: {
-      products,
+      products: {},
     },
   };
 }

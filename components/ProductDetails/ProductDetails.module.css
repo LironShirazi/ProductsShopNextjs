@@ -1,13 +1,19 @@
 
 .imageContainer {
   position: relative;
-  width: 150px;
-  height: 20%;
-  padding: 200px;
+  width: 12rem;
+  height: 15em;
+  padding: 2em;
+  display: flex;
+  /* align-content: center; */
+  /* align-items: center; */
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .productContainer {
   padding: 20px;
+
 }
 
 .category {
@@ -26,6 +32,7 @@
 
 .description {
   font-family: 'Helvetica Neue', cursive;
+  font-size: 1.4em;
 }
 
 .priceContainer {
@@ -53,10 +60,15 @@
   height: 2.4rem;
   width: 20rem;
   background: white;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.2rem;
   /* font-family: ; */
   border-radius: 20px;
   padding: 5px;
-  border: solid 1px 
+  border: solid 1px;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
 }
