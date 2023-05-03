@@ -1,13 +1,12 @@
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 import styles from './id.module.css';
-import productsStyles from './products.module.css';
 
-export default function Product({ title, image, price, category, description }) {
-  // const router = useRouter();
-  // const { id } = router.query;
+export default function Product({
+  title, image, price, category, description,
+}) {
   return (
     <div className={styles.productPageContainer}>
       <div className={styles.productContainer}>
@@ -22,8 +21,8 @@ export default function Product({ title, image, price, category, description }) 
           <span className={styles.currency}>$</span>
         </div>
         <button type="button" className={styles.button}>
-        <Link href="/products">Back to Products Page</Link>
-      </button>
+          <Link href="/products">Back to Products Page</Link>
+        </button>
 
       </div>
     </div>
@@ -54,3 +53,19 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+Product.defaultProps = {
+  title: '',
+  image: '',
+  price: 100,
+  category: '',
+  description: '',
+};
+
+Product.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  category: PropTypes.string,
+  description: PropTypes.string,
+};

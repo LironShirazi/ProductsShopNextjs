@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './products.module.css';
+import PropTypes from 'prop-types';
 import Product from '../../components/Product/Product';
+import styles from './products.module.css';
 
 export default function Products({ products }) {
   return (
@@ -31,3 +32,11 @@ export async function getStaticProps() {
     },
   };
 }
+
+Products.defaultProps = {
+  products: [],
+};
+
+Products.propTypes = {
+  products: PropTypes.arrayOf(Object),
+};

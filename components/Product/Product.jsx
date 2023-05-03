@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 import Image from 'next/image';
-import styles from './product.module.css';
 import Link from 'next/link';
+import styles from './Product.module.css';
 
-export default function Product({ id, title, imgSrc, price }) {
+export default function Product({
+  id, title, imgSrc, price,
+}) {
   return (
     <div className={styles.productContainer}>
       <div className={styles.imageContainer}>
@@ -17,7 +21,7 @@ export default function Product({ id, title, imgSrc, price }) {
             {' '}
             $
           </div>
-          <button>
+          <button type="button">
             <Link className={styles.detailsButton} href={`/products/${id}`}>
               View details
             </Link>
@@ -32,3 +36,7 @@ Product.defaultProps = {
   title: 'Nike airforce 07',
   price: '399$',
 };
+
+// Product.validationProps = {
+//   id:, title, imgSrc, price,
+// }
